@@ -64,7 +64,6 @@ const App = () => {
 
         <p className="currency-snap__rate">
           Exchange Rate: 1 USD = 50.0 EGP
-          design
         </p>
       </form>
     </div>
