@@ -161,4 +161,16 @@ body {
     letter-spacing: 0.5px;
     background: rgba(255, 255, 255, 0.15);
     text-align: center;
+    transition: 0.3s all ease-in-out;
+}
+
+.currency-snap__form .currency-snap__rate.Loading {
+    opacity: 0.8;
+    pointer-events: none;
+    
+}
+
+.currency-snap__form .currency-snap__rate:hover {
+    background: rgba(255, 255, 255, 0.25);
+
 }

@@ -6,6 +6,7 @@ function ConverterForm() {
   const [fromCurrency, setFromCurrency] = useState("USD");
   const [toCurrency, setToCurrency] = useState("EGP");
   const [result, setResult] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSwapCurrency = () => {
     setFromCurrency(toCurrency);
@@ -15,6 +16,9 @@ function ConverterForm() {
     const API_KEY = import.meta.env.VITE_API_KEY;
     const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/pair/${fromCurrency}/${toCurrency}`;
     // Your code to fetch the currency rate goes here
+
+    setIsLoading(true);
+
     try {
       const response = await fetch(API_URL);
       if (!response.ok) {
@@ -30,6 +34,8 @@ function ConverterForm() {
       }
     } catch (error) {
       console.error("Error fetching the currency rate: ", error);
+    } finally {
+      setIsLoading(false);
     }
   }, [fromCurrency, toCurrency, amount]);
 
@@ -98,8 +104,8 @@ function ConverterForm() {
         Update Exchange Rate
       </button>
 
-      <p className="currency-snap__rate">
-        {result}
+      <p className={`${isLoading ? "Loading" : ""} currency-snap__rate`}>
+        {isLoading ? "Getting Exchange Rate" : result}
       </p>
     </form>
   );
