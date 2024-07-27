@@ -26,6 +26,7 @@ body {
     padding: 40px 30px 50px 50px;
     border-radius: 10px;
     max-width: 410px;
+    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     background: rgba(2, 7, 40, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.5);

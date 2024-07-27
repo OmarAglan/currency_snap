@@ -20,7 +20,7 @@ const currencyCodes = [
 ]
 
 // eslint-disable-next-line react/prop-types
-const ConverterSelect = ({ selectedCurrency, handleCurrencyChange}) => {
+const ConverterSelect = ({ selectedCurrency, handleCurrencyChange }) => {
     // eslint-disable-next-line react/prop-types
     const countryCode = selectedCurrency.substring(0, 2);
     return (
@@ -28,7 +28,9 @@ const ConverterSelect = ({ selectedCurrency, handleCurrencyChange}) => {
             <img src={`https://flagsapi.com/${countryCode}/flat/64.png`} alt="Flag" />
             <select
                 onChange={handleCurrencyChange}
-                className="currency-snap__form__dropdown" value={selectedCurrency}>
+                className="currency-snap__form__dropdown" value={selectedCurrency}
+                title="Select the currency"
+            >
                 {currencyCodes.map((currency) => (
                     <option key={currency} value={currency}>{currency}</option>
                 ))}
