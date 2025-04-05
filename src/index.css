@@ -1,176 +1,227 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
+/* Dark Theme Body */
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(farthest-corner at 40px 40px, rgb(10, 175, 65) 0%, rgb(17, 89, 172) 100%);
-    ;
+    background-color: #1a1d21; /* Dark background */
+    color: #e0e0e0; /* Light default text */
 }
 
 #root {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Main Container - Dark */
 .currency-snap {
-    margin: 0 auto;
-    padding: 40px 30px 50px 50px;
-    border-radius: 10px;
-    max-width: 410px;
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter: blur(30px);
-    background: rgba(2, 7, 40, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding: 40px; /* Slightly more padding */
+    border-radius: 12px;
+    max-width: 460px; /* Slightly wider */
+    width: 100%;
+    background: #2c3035; /* Dark card background */
+    border: 1px solid #40454a; /* Subtle border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Adjusted shadow for dark */
 }
 
 .currency-snap .currency-snap__title {
-    color: #fff;
-    font-size: 1.6rem;
+    color: #ffffff; /* White title */
+    font-size: 1.9rem; /* Slightly larger */
     font-weight: 600;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 45px; /* Increased spacing */
 }
 
 .currency-snap .currency-snap__form {
-    margin-top: 45px;
+    margin-top: 0;
 }
 
 .currency-snap__form .currency-snap__form__group {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 28px; /* Adjusted spacing */
     flex-direction: column;
 }
 
 .currency-snap__form .currency-snap__form__group .currency-snap__form__label {
-    color: #fff;
+    color: #a0a5ac; /* Lighter gray label */
     font-weight: 500;
     display: block;
-    margin-bottom: 9px;
-    font-size: 1.1rem;
-
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
+/* Input - Dark */
 .currency-snap__form .currency-snap__form__group .currency-snap__form__input {
     outline: none;
-    font-size: 1.1rem;
-    padding: 0 5px;
-    color: #fff;
-    font-weight: 600;
-    min-height: 48px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: 0.3s all ease-in-out;
+    font-size: 1rem;
+    padding: 0 15px;
+    color: #e0e0e0; /* Light text */
+    font-weight: 400;
+    height: 52px;
+    border-radius: 8px;
+    background: #3a3f44; /* Darker input background */
+    border: 1px solid #3a3f44; /* Make default border match background */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out; /* Add background-color transition */
 }
 
 .currency-snap__form .currency-snap__form__group .currency-snap__form__input:hover {
-    background: rgba(255, 255, 255, 0.3);
+    border-color: #6c757d; /* Lighter border on hover */
+    background: #3a3f44;
 }
 
+.currency-snap__form .currency-snap__form__group .currency-snap__form__input:focus {
+    border-color: #20c997; /* Teal accent border */
+    box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.25);
+    background-color: #40454a; /* Slightly lighter background on focus */
+}
+
+/* Container for From/To selects */
 .currency-snap__form .currency-snap__form__group--two {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-end; /* Align items to bottom for better label alignment */
     justify-content: space-between;
+    gap: 15px; /* Add gap between elements */
 }
 
-.currency-snap__form__group--two .currency-snap__form__select {
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
-    padding: 3px 3px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: 0.3s all ease-in-out;
+.currency-snap__form__group--two .currency-snap__form__section {
+    flex: 1; /* Allow sections to grow */
 }
 
-.currency-snap__form__group--two .currency-snap__form__select:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.currency-snap__form__group--two .currency-snap__form__select img {
-    width: 30px;
-}
-
-.currency-snap__form__group--two .currency-snap__form__select .currency-snap__form__dropdown {
-    outline: none;
-    border: none;
-    background: none;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 0 10px 0 10px;
-}
-
-.currency-snap__form__group--two .currency-snap__form__select .currency-snap__form__dropdown option {
-    color: #000;
-    font-weight: 600;
-}
-
+/* Swap Icon - Dark */
 .currency-snap__form__group--two .currency-snap__swap__icon {
-    height: 40px;
-    width: 40px;
+    height: 44px; /* Adjusted size */
+    min-width: 44px;
     cursor: pointer;
     display: flex;
-    margin-top: 25px;
+    margin-top: 0;
+    margin-bottom: 4px; /* Align with input bottom */
     align-items: center;
     justify-content: center;
-    border-radius: 45%;
-    background: rgba(255, 255, 255, 0.179);
-    border: 1px solid rgba(255, 255, 255, 0.479);
-    transition: 0.3s all ease-in-out;
+    border-radius: 50%;
+    background: #4a4f54; /* Dark background */
+    border: 1px solid #60656a; /* Dark border */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.currency-snap__form__group--two .currency-snap__swap__icon svg path {
+    fill: #20c997; /* Teal accent */
 }
 
 .currency-snap__form__group--two .currency-snap__swap__icon:hover {
-    background: rgba(255, 255, 255, 0.479);
+    background-color: #5a5f64;
+    border-color: #7c8186;
 }
 
+/* Button - Dark Theme */
 .currency-snap__form .currency-snap__form__button {
     width: 100%;
-    min-height: 52px;
-    border-radius: 6px;
+    height: 52px;
+    border-radius: 8px;
     border: none;
     outline: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem; /* Slightly larger */
     font-weight: 600;
     cursor: pointer;
-    transition: 0.3s all ease-in-out;
+    background-color: #20c997; /* Teal accent */
+    color: #111; /* Dark text for contrast on teal */
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    margin-top: 20px; /* Increased margin */
 }
 
 .currency-snap__form .currency-snap__form__button:hover {
-    background: rgba(255, 255, 255, 0.7);
+    background-color: #1baa80; /* Darker teal on hover */
+    opacity: 0.95;
 }
 
+.currency-snap__form .currency-snap__form__button:focus {
+    box-shadow: 0 0 0 3px rgba(32, 201, 151, 0.35); /* Teal focus ring */
+}
+
+.currency-snap__form .currency-snap__form__button:active {
+    background-color: #179b77;
+    opacity: 1;
+}
+
+/* Result Area - Dark */
 .currency-snap__form .currency-snap__rate {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 25px 0;
-    margin-top: 30px;
-    border-radius: 7px;
-    letter-spacing: 0.5px;
-    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff; /* Bright text */
+    font-size: 1.3rem; /* Larger size */
+    font-weight: 500; /* Adjusted weight */
+    padding: 20px 15px; /* Vertical padding */
+    margin-top: 40px; /* Increased margin */
+    border-radius: 8px; /* Add radius back */
+    border: none; /* Remove top border */
+    background-color: #3a3f44; /* Use input background color */
     text-align: center;
-    transition: 0.3s all ease-in-out;
+    transition: none;
+    min-height: 65px; /* Ensure space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-all;
 }
 
 .currency-snap__form .currency-snap__rate.Loading {
-    opacity: 0.8;
+    opacity: 0.7;
+    color: #a0a5ac;
     pointer-events: none;
-    
 }
 
 .currency-snap__form .currency-snap__rate:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: #3a3f44; /* No hover effect */
+}
 
+/* Error/Loading Messages - Dark */
+.currency-snap__error {
+    color: #f87171; /* Light red for errors */
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.currency-snap__loading-codes {
+    color: #a0a5ac; /* Muted light gray */
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Disabled Fieldset - Dark */
+.currency-snap__fieldset:disabled {
+    opacity: 0.6; /* Adjust opacity for dark */
+    cursor: not-allowed;
+}
+
+/* Ensure cursor consistency */
+.currency-snap__fieldset:disabled .currency-snap__swap__icon,
+.currency-snap__fieldset:disabled .currency-snap__form__input,
+.currency-snap__fieldset:disabled .react-select__control,
+.currency-snap__fieldset:disabled .currency-snap__form__button {
+    cursor: not-allowed !important; /* Ensure override if needed */
+    pointer-events: none;
+}
+
+/* Minor fix for input type number appearance */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
